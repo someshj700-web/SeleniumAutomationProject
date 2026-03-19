@@ -12,5 +12,9 @@ public class Test1 extends BaseClass  {
     public void VerifyGetTitle(){
         String actualtitle=driver.getTitle();
         Assert.assertEquals(actualtitle,"omayo (QAFox.com)", "Page title mismatch!");
+        System.out.println("Test 1");
+        System.out.println("Test 2");
     }
+
+
 }
