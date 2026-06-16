@@ -1,21 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test verbose="2" preserve-order="true" name="C:/Users/somes/IdeaProjects/Testing/src/test/java/Selenium">
+    <test verbose="2" preserve-order="true" name="C:/Users/somes/IdeaProjects/Testing/src/test/java/Tests">
         <classes>
-            <class name="Selenium.Get_Current_Page_Title">
+            <class name="Tests.Test1">
                 <methods>
-                    <include name=""/>
+                    <include name="VerifyGetTitle"/>
                 </methods>
             </class>
-            <class name="Selenium.Sample_Testing">
+            <class name="Tests.Test2">
                 <methods>
-                    <include name="verifylink"/>
+                    <include name="VerifyGetUrl"/>
                 </methods>
             </class>
-            <class name="Selenium.alertinterface">
+            <class name="Tests.Test3">
                 <methods>
-                    <include name="verifyAlert"/>
+                    <include name="RadioVerify"/>
+                </methods>
+            </class>
+            <class name="Tests.Test4">
+                <methods>
+                    <include name="verifySubmitButtonClickable"/>
+                    <include name="dummy"/>
+                </methods>
+            </class>
+            <class name="Tests.Test5">
+                <methods>
+                    <include name="verifyTextboxAccept"/>
                 </methods>
             </class>
         </classes>
