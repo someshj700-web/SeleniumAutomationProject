@@ -28,7 +28,7 @@ public class LoginTestWithAssertTrue {
 
         // Step 3: Check if Welcome message is displayed
         WebElement welcomeMsg = driver.findElement(By.id("selenium143"));
-        //boolean isDisplayed = welcomeMsg.isDisplayed();
+        //boolean isDis = welcomeMsg.isDisplayed();
 
         // ✅ Assertion
         Assert.assertTrue(welcomeMsg.isDisplayed(), "Message is displayed");

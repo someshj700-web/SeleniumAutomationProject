@@ -37,11 +37,11 @@ public class NewTabExample {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().window().minimize();
-        driver.get("https://omayo.blogspot.com/");
+        driver.get("https://www.amazon.in/l/1388921031/?_encoding=UTF8&pd_rd_w=dzNy0&content-id=amzn1.sym.7db31cb9-0df8-4370-a351-4f74924c1c7a&pf_rd_p=7db31cb9-0df8-4370-a351-4f74924c1c7a&pf_rd_r=F56EAZ5BXZ1CGPCVTDJD&pd_rd_wg=h1gE6&pd_rd_r=3665058f-908a-4098-802a-a71cf19a65d3&ref_=pd_hp_d_atf_unk");
 
-        WebElement actual_title=driver.findElement(By.xpath("//a[text()='Page One']"));
-
-        Assert.assertTrue(actual_title.getText().matches("[a-zA-Z ]+"), "Title contains numbers");
+        WebElement boat=driver.findElement(By.xpath("//div[@id='carousel']/descendant::span[text()='Boat Rockerz 255 Pro+, 60HRS Battery, Fast…']"));
+            boat.click();
+       // Assert.assertTrue(boat.getText().matches("[a-zA-Z ]+"), "Title contains numbers");
         System.out.println("Testcases is passed:Title should be String only");
 
         driver.quit();

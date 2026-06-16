@@ -23,11 +23,12 @@ public class Dropdown_RetriveAlloption {
         Select select=new Select(dropdown);
 
         List<WebElement> allOption = select.getOptions();
-
+       // System.out.println(allOption.size());
         //Iterate through for each loop
 
         for (WebElement option:allOption){
             System.out.println(option.getText());
+            System.out.println(option.getSize());
         }
 
         driver.quit();

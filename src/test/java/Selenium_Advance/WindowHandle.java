@@ -23,9 +23,12 @@ public class WindowHandle {
 
         // Get the current window handle (parent)
         String mainwindow = driver.getWindowHandle();
+        System.out.println(mainwindow);
 
         // Get all window handles
         Set<String> allWindows = driver.getWindowHandles();
+
+        System.out.println();
 
         for (String window : allWindows) {
             if (!window.equals(mainwindow)) {
