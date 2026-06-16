@@ -1,28 +1,23 @@
 package Selenium;
 
+import Base_Folder.BaseTestproperties;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
-public class IsDisplay {
-    public static void main(String[] args) {
-        WebDriverManager.chromedriver();
+public class IsDisplay extends BaseTestproperties {
 
-        WebDriver driver=new ChromeDriver();
-        driver.manage().window().maximize();
-
-        driver.get("https://tutorialsninja.com/demo/index.php?route=account/login");
+    @Test
+    public  void verifyvisibilty () {
 
         WebElement Testcase=driver.findElement(By.id("input-email"));
 
-        if(Testcase.isDisplayed()){
-            System.out.println("Testcases button is displayed");
-        }
-        else {
-            System.out.println("Testcase button is not displayed");
-        }
+        Assert.assertTrue(Testcase.isDisplayed());
+        System.out.println("Test passed");
 
 
         driver.quit();

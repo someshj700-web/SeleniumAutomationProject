@@ -18,11 +18,11 @@ public class Screenshot {
 
         driver.get("https://omayo.blogspot.com/");
 
-        // Take screenshot
+
         File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
         // Save screenshot to desired location
-        File destination = new File("screenshot.png");
+        File destination = new File("screenshot122.png");
         FileUtils.copyFile(screenshot, destination);
 
         System.out.println("📸 Screenshot saved at: " + destination.getAbsolutePath());

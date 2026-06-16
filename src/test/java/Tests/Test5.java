@@ -18,12 +18,15 @@ public class Test5 extends BaseClass {
             LogManager.getLogger(Test5.class);
 
     @Test
-    public void verifySubmitButtonClickable(){
+    public void verifyTextboxAccept(){
         DashBoard db=new DashBoard(driver);
-        db.Textbox("someshjadahv");
-    logger.error("Entered text unsuccessfully");
-    logger.warn("Error may be happen");
+        db.enterText("someshjadahv");
+
     logger.info("Entered text successfully");
+       String actual=db.getenterText();
+
+       logger.info(actual);
+
     }
 
 

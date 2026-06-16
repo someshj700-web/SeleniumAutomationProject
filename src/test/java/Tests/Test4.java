@@ -17,8 +17,14 @@ public class Test4 extends BaseClass {
     @Test
     public void verifySubmitButtonClickable(){
         DashBoard db=new DashBoard(driver);
-        db.clickbutton();
+        db.clickSubmitButton();
+
         logger.info("Button is clickabled");
+    }
+
+    @Test(dependsOnMethods = "verifySubmitButtonClickable")
+    public void dummy(){
+     logger.info("Test run 2");
     }
 
 

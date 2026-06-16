@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 
 public class IsEnabled {
     public static void main(String[] args) {
@@ -17,12 +18,10 @@ public class IsEnabled {
 
         WebElement Testcase=driver.findElement(By.id("input-email"));
 
-        if(Testcase.isEnabled()){
-            System.out.println("Testcases button is Enabled");
-        }
-        else {
-            System.out.println("Testcase button is not Enabled");
-        }
+
+
+
+
 
 
         driver.quit();

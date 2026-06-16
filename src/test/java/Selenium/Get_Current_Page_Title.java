@@ -11,9 +11,9 @@ public class Get_Current_Page_Title {
     public static void main(String[] args) throws InterruptedException {
         WebDriverManager.chromedriver();
 
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
-        WebDriver driver = new ChromeDriver(options);
+        //ChromeOptions options = new ChromeOptions();
+        //options.addArguments("--headless");
+        WebDriver driver = new ChromeDriver();
 
 
         driver.manage().window().maximize();

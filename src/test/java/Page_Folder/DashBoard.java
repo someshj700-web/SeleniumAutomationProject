@@ -6,10 +6,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class DashBoard {
-    WebDriver driver;
+    WebDriver driver;//class level variable like driver
 
     public DashBoard(WebDriver driver){
-        this.driver=driver;
+        this.driver=driver;//local variable
         PageFactory.initElements(driver,this);
     }
     @FindBy (id="but2")
@@ -18,13 +18,17 @@ public class DashBoard {
     @FindBy (id="ta1")
     WebElement textbox;
 
-    public void clickbutton(){
+    public void clickSubmitButton(){
         submitbutton.click();
     }
 
-    public void Textbox(String text){
+
+    public void enterText(String text){
         textbox.sendKeys(text);
     }
 
+    public String getenterText(){
+        return textbox.getAttribute("value");
+   }
 
 }

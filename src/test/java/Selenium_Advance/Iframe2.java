@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 public class Iframe2 {
     public static void main(String[] args) throws InterruptedException {
@@ -19,6 +20,9 @@ public class Iframe2 {
 
         driver.manage().window().maximize();
         driver.get("https://omayo.blogspot.com/");
+
+        List<WebElement> count = driver.findElements(By.tagName("iframe"));
+        System.out.println("Total frames: " + count.size());
 
         Thread.sleep(3000);
 

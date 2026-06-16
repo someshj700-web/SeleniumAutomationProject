@@ -21,8 +21,8 @@ public class Javascript_Click {
         //Scroll into view using JavaScript
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
-        WebElement click=driver.findElement(By.id("alert1"));
-        js.executeScript("arguments[0].click()",click);
+        WebElement element=driver.findElement(By.id("alert1"));
+        js.executeScript("arguments[0].click();",element);
 
         driver.quit();
     }

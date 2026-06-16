@@ -14,6 +14,9 @@ public class Iframe {
         driver.manage().window().maximize();
         driver.get("https://docs.oracle.com/javase/8/docs/api/");
 
+        int count = driver.findElements(By.tagName("iframe")).size();
+        System.out.println("Total frames: " + count);
+
         // Switch to iframe using id
         driver.switchTo().frame("classFrame");//passed the name locater
 

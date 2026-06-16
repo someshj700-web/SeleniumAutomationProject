@@ -9,6 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TestNgAsserations  {
+
     @Test
     public void verifyCellNumber(){
         WebDriverManager.chromedriver().setup();
@@ -22,7 +23,7 @@ public class TestNgAsserations  {
 
         String cellN=cellnumber.getText();
 
-        Assert.assertTrue(cellN.matches("[0-9]+"),"cellnumber shouldnt match");
+        Assert.assertTrue(cellnumber.getText().matches("[0-9]+"),"cellnumber shouldnt match");
         System.out.println("Test is passed:cellnumber should be number "+cellN);
 
         Assert.assertFalse(cellN.matches("[a-zA-Z]+"),"cellnumber should match");
@@ -36,5 +37,16 @@ public class TestNgAsserations  {
 
         Assert.assertFalse(cellN.isEmpty(),"cellnumber should match");
         System.out.println("Test is passed:cellnumber shouldnot be Empty "+cellN);
+
+        Assert.assertTrue(cellnumber.isDisplayed(),"number shouldnot displayed");
+        System.out.println("Test is passed:cellnumber should be displayed "+cellN);
+
+        Assert.assertFalse(cellnumber.isSelected(),"number is enabled");
+        System.out.println("Test is passed:cellnumber shouldnot be selectabel "+cellN);
+
+        Assert.assertTrue(cellnumber.isEnabled(),"number shouldnot enabled");
+        System.out.println("Test is passed:cellnumber should be Enabled "+cellN);
+
+        driver.quit();
     }
 }
