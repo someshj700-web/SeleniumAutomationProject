@@ -1,4 +1,4 @@
-package TestNg;
+package TestNg2;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -11,7 +11,7 @@ import java.util.List;
 
 public class Checkboxes {
 
-    @Test
+    @Test(groups = "smoke")
     public void verifycheck() throws InterruptedException {
         WebDriverManager.chromedriver().setup();
         WebDriver driver=new ChromeDriver();
@@ -31,5 +31,6 @@ public class Checkboxes {
                 cb.click();
             }
         }
+        driver.quit();
     }
 }
