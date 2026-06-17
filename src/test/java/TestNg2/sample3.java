@@ -30,6 +30,7 @@ public class sample3 {
 
         String words=word.getText();
         System.out.println(words);
+        System.out.println("completed");
 
         driver.quit();
 
