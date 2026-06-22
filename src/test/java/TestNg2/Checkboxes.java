@@ -16,6 +16,7 @@ public class Checkboxes {
         WebDriverManager.chromedriver().setup();
         WebDriver driver=new ChromeDriver();
         driver.manage().window().maximize();
+        driver.manage().window().minimize();
         driver.get("https://omayo.blogspot.com/");
 
         driver.findElement(By.id("checkbox1")).click();
