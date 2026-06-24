@@ -1,4 +1,4 @@
-package OrangeHRM;
+package OrangeHRM.Loginpage;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
