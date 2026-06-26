@@ -6,10 +6,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class AccountPage {
+public class AccountPage_HomePage {
     WebDriver driver;
 
-    public AccountPage(WebDriver driver){
+    public AccountPage_HomePage(WebDriver driver){
         this.driver=driver;
         PageFactory.initElements(driver,this);
     }
@@ -17,16 +17,16 @@ public class AccountPage {
     WebElement title;
 
     @FindBy(xpath="//a[text()='Qafox.com']")
-    WebElement logoClick;
+    WebElement QaFoxcomLogo;
 
     @FindBy(xpath="//input[@name='search']")
-    WebElement enterTextSearchbox;
+    WebElement Searchbox;
 
     @FindBy(xpath="//button[@class='btn btn-default btn-lg']")
-    WebElement ClickTextSearchbox;
+    WebElement SearchButton;
 
     @FindBy (xpath = "//div[@class='caption']")
-    WebElement TextMobile;
+    WebElement MobileText;
 
     @FindBy (xpath = "(//img[@class='img-responsive'])[1]")
     WebElement ImageProduct;
@@ -35,14 +35,14 @@ public class AccountPage {
     WebElement ProductName;
 
     @FindBy (id="button-cart")
-    WebElement ClickAddtocart;
+    WebElement AddtocartButton;
 
     @FindBy (xpath = "//div[@class='alert alert-success alert-dismissible']")
-    WebElement clicksuccessmessage;
+    WebElement successMessage;
 
 
 
-    public String getPageTitleextract() {
+    public String getPageTitleExtract() {
         return title.getText();
     }
     public String getPageTitle() {
@@ -53,36 +53,36 @@ public class AccountPage {
         return driver.getCurrentUrl();
     }
 
-    public void clicklogo(){
-        logoClick.click();
+    public void clickQaFoxcomLogo(){
+        QaFoxcomLogo.click();
     }
 
-    public void searchText(String text){
-        enterTextSearchbox.sendKeys(text);
+    public void enterTextInSearchBox(String text){
+        Searchbox.sendKeys(text);
     }
 
-    public void clickSearchbox(){
-        ClickTextSearchbox.click();
+    public void clickSearchButton(){
+        SearchButton.click();
     }
 
-    public String verifyMobilepage(){
-       return TextMobile.getText();
+    public String getMobileText(){
+       return MobileText.getText();
     }
 
     public boolean isProductImageButtonEnabled() {
         return ImageProduct.isEnabled();
     }
 
-    public void clickclickProductName(){
+    public void clickProductName(){
         ProductName.click();
     }
 
-    public void ClickAddtocartbutton(){
-        ClickAddtocart.click();
+    public void ClickAddToCartButton(){
+        AddtocartButton.click();
     }
 
-    public String Successmessage(){
-        return clicksuccessmessage.getText();
+    public String getSuccessMessage(){
+        return successMessage.getText();
     }
     public void scrollDown() {
         JavascriptExecutor js = (JavascriptExecutor) driver;
