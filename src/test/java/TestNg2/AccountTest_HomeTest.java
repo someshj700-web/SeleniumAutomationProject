@@ -1,34 +1,35 @@
 package TestNg2;
 
 import Base_Folder.BaseMethod;
-import Page_Folder.AccountPage;
 
+
+import Page_Folder.AccountPage_HomePage;
 import org.testng.Assert;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class AccountTest extends BaseMethod {
-    AccountPage homepage;
+public class AccountTest_HomeTest extends BaseMethod {
+    AccountPage_HomePage homepage;
 
     @BeforeMethod
     public void init() {
 
-        homepage = new AccountPage(driver);
+        homepage = new AccountPage_HomePage(driver);
     }
 
     @Test(priority = 1)
-    public void verifyTitle() throws InterruptedException {
+    public void verifyAccountTitle() throws InterruptedException {
         Thread.sleep(3000);
 
-        String actualTitle=homepage.getPageTitleextract();
+        String actualTitle=homepage.getPageTitleExtract();
 
         Assert.assertEquals(actualTitle, "Qafox.com","Test is failed");
         System.out.println("Testcases passed");
     }
 
     @Test(priority = 2)
-    public void verifyUrl() throws InterruptedException {
+    public void verifyAccountUrl() throws InterruptedException {
         Thread.sleep(3000);
 
         String actualUrl=homepage.getCurrentPageUrl();
@@ -38,35 +39,35 @@ public class AccountTest extends BaseMethod {
     }
 
     @Test(priority = 3)
-    public void verifyLogo() throws InterruptedException {
+    public void verifyAccountLogo() throws InterruptedException {
 
-        homepage.clicklogo();
+        homepage.clickQaFoxcomLogo();
         Thread.sleep(2000);
         Assert.assertEquals(homepage.getPageTitle(),"Your Store","Test cases failed");
         System.out.println("Testcases passed");
     }
      @Test(priority = 4)
     public void verifySerachBox() {
-        homepage.searchText("iPhone");
-        homepage.clickSearchbox();
+        homepage.enterTextInSearchBox("iPhone");
+        homepage.clickSearchButton();
 
-        Assert.assertEquals(homepage.verifyMobilepage(),"iPhone\n" +
+        Assert.assertEquals(homepage.getMobileText(),"iPhone\n" +
                 "iPhone is a revolutionary new mobile phone that allows you to make a call by simply tapping a name o..\n" +
                 "$123.20\n" +
                 "Ex Tax:$101.00");
     }
 
     @Test
-    public void verifyaddtocartProduct() throws InterruptedException {
-        homepage.clicklogo();
+    public void verify_Add_to_Cart_Product() throws InterruptedException {
+        homepage.clickQaFoxcomLogo();
         Thread.sleep(2000);
 
-        homepage.searchText("MacBook");
+        homepage.enterTextInSearchBox("MacBook");
         Thread.sleep(2000);
-        homepage.clickSearchbox();
+        homepage.clickSearchButton();
         Thread.sleep(2000);
 
-        Assert.assertEquals(homepage.verifyMobilepage(),"MacBook\n" +
+        Assert.assertEquals(homepage.getMobileText(),"MacBook\n" +
                 "Intel Core 2 Duo processor Powered by an Intel Core 2 Duo processor at speeds up to 2.16GHz, t..\n" +
                 "$602.00\n" +
                 "Ex Tax:$500.00");
@@ -76,14 +77,14 @@ public class AccountTest extends BaseMethod {
 
        homepage.scrollDown();
         Thread.sleep(3000);
-        homepage.clickclickProductName();
+        homepage.clickProductName();
 
         Assert.assertEquals(homepage.getPageTitle(),"MacBook","Test failed");
         Thread.sleep(3000);
-        homepage.ClickAddtocartbutton();
+        homepage.ClickAddToCartButton();
 
         Thread.sleep(3000);
-        Assert.assertEquals(homepage.Successmessage(),"Success: You have added MacBook to your shopping cart!\n" +
+        Assert.assertEquals(homepage.getSuccessMessage(),"Success: You have added MacBook to your shopping cart!\n" +
                 "×","Test is failed");
 
     }
