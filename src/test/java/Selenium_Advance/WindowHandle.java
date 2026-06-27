@@ -5,11 +5,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+import utilities.WindowUtility;
 
 import java.util.Set;
 
 public class WindowHandle {
-    public static void main(String[] args) {
+
+
+    @Test
+    public void window() {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -20,6 +25,7 @@ public class WindowHandle {
         // Click on link that opens a new window
         WebElement link = driver.findElement(By.id("selenium143"));
         link.click();
+
 
         // Get the current window handle (parent)
         String mainwindow = driver.getWindowHandle();
