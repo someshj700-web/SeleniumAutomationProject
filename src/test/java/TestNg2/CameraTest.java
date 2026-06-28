@@ -8,13 +8,16 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import utilities.ActionsUtility;
 import utilities.BrokenLinkUtility;
+import utilities.WaitUtility;
 
 import java.util.List;
 
 public class CameraTest extends BaseMethod {
+
     CameraPage page;
     ActionsUtility action;
     BrokenLinkUtility utility;
+
 
     @BeforeMethod
     public void init() {
@@ -24,15 +27,14 @@ public class CameraTest extends BaseMethod {
     }
 
     @Test
-    public void verify_sort_dropdown() throws InterruptedException {
-        Thread.sleep(3000);
+    public void verify_sort_dropdown() {
+
         page.clickCameraLink();
-        Thread.sleep(2000);
 
         page.selectsortByDropdown("Name (Z - A)");
-        Thread.sleep(2000);
+
         Assert.assertEquals(page.getSelectedsortByDropdown(), "Name (Z - A)");
-        Thread.sleep(2000);
+
         System.out.println(page.getSelectedsortByDropdown());
 
         List<WebElement> item = page.getAllsortByDropdownOptions();
@@ -42,53 +44,53 @@ public class CameraTest extends BaseMethod {
                 "Engineered with pro-level features and performance, the 12.3-effective-megapixel D300 combines brand..\n" +
                 "$98.00\n" +
                 "Ex Tax:$80.00", "Test failed");
-        Thread.sleep(2000);
+
     }
 
     @Test
-    public void verifyRatingRadio() throws InterruptedException {
-        Thread.sleep(3000);
+    public void verifyRatingRadio() {
+
         page.clickCameraLink();
-        Thread.sleep(2000);
+
 
         page.selectsortByDropdown("Name (Z - A)");
-        Thread.sleep(2000);
+
 
         page.clickNikonD300();
-        Thread.sleep(2000);
+
 
         page.clickReviewsLink();
-        Thread.sleep(2000);
+
 
         page.selectgood1radio();
-        Thread.sleep(2000);
+
         Assert.assertTrue(page.isGood1Selected());
         page.selectgood2radio();
-        Thread.sleep(2000);
+
         Assert.assertTrue(page.isGood2Selected());
-        Thread.sleep(2000);
-        driver.quit();
+
+
 
     }
 
     @Test
     public void verifyDesktopMenu() throws InterruptedException {
-        Thread.sleep(3000);
+
         page.clickCameraLink();
-        Thread.sleep(2000);
+
 
         action.mouseHover(page.getDesktopMenu());
 
-        Thread.sleep(2000);
+
 
         driver.quit();
     }
 
     @Test
     public void verifygetalllinks() throws Exception {
-        Thread.sleep(3000);
+
         page.clickCameraLink();
-        Thread.sleep(2000);
+
 
         List<WebElement> links = page.getAllLinks();
 
