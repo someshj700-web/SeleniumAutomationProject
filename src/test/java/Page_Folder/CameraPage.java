@@ -37,6 +37,12 @@ public class CameraPage {
     @FindBy (xpath = "//div[@class='col-sm-12']/input[3]")
     WebElement good2radio;
 
+    @FindBy (xpath = "//a[text()='Desktops']")
+    WebElement desktopmenu;
+
+    @FindBy(tagName = "a")
+    List<WebElement> allLinks;
+
     public void clickCameraLink(){
         CameraLink.click();
     }
@@ -68,8 +74,6 @@ public class CameraPage {
         reviewslink.click();
     }
 
-
-
     public void selectgood1radio(){
         good1radio.click();
     }
@@ -84,6 +88,14 @@ public class CameraPage {
 
     public boolean isGood2Selected() {
         return good2radio.isSelected();
+    }
+
+    public WebElement getDesktopMenu() {
+        return desktopmenu;
+    }
+
+    public List<WebElement> getAllLinks() {
+        return allLinks;
     }
 
 }
